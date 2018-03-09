@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/pages/Home'
+import Detail from '@/pages/Detail'
 import Coming from '@/pages/Coming'
+import Confirm from '@/pages/Confirm'
 import _404 from '@/pages/404'
 import store from '@/store'
 
@@ -24,6 +26,22 @@ let router = new Router({
             path: '/Home',
             name: 'Home',
             component: Home,
+            meta: {
+                requireAuth: false
+            },
+        },
+        {
+            path: '/Detail',
+            name: 'Detail',
+            component: Detail,
+            meta: {
+                requireAuth: false
+            },
+        },
+        {
+            path: '/Confirm',
+            name: 'Confirm',
+            component: Confirm,
             meta: {
                 requireAuth: false
             },

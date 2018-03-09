@@ -1,7 +1,7 @@
 <template>
     <header class="header">
         <sticky scroll-box="vux_view_box_body" :check-sticky-support="false">
-            <tab :line-width='2' active-color='#27A3F4'>
+            <tab :line-width='2' active-color='#27A3F4' default-color="#A5B2C5">
                 <tab-item class="vux-center" :selected="selected === item" v-for="(item, index) in list" @on-item-click="onMenuChange(item)" :key="index">{{item}}</tab-item>
             </tab>
         </sticky>
@@ -42,5 +42,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
-.header {}
+.header {
+    .vux-tab .vux-tab-item {
+        font-size: 17px;
+    }
+}
 </style>

@@ -2,7 +2,9 @@
     <div id="app" style="height:100%;">
         <view-box ref="viewBox">
             <vo-header></vo-header>
-            <router-view></router-view>
+            <transition name="fade" mode="out-in">
+                <router-view></router-view>
+            </transition>
             <vo-footer></vo-footer>
         </view-box>
     </div>
@@ -23,11 +25,24 @@ export default {
 </script>
 
 <style lang="less">
+@import '~vux/src/styles/1px.less';
 @import '~vux/src/styles/reset.less';
 @import '~@/style/vuxreset.less';
 
 body {
     background-color: #fbf9fe;
+    /****************************
+    *       Vue Animation      *
+    ****************************/
+    .fade-enter-active,
+    .fade-leave-active {
+        transition: opacity .2s
+    }
+
+    .fade-enter,
+    .fade-leave-to {
+        opacity: 0
+    }
 }
 
 html,

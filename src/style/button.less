@@ -1,0 +1,9 @@
+@import "./variable";
+
+.btn(@color: @colorPrimary) {  
+    background-color: @color !important;
+}
+
+.weui-btn_primary{
+    .btn();
+}
