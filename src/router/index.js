@@ -27,7 +27,8 @@ let router = new Router({
             name: 'Home',
             component: Home,
             meta: {
-                requireAuth: false
+                requireAuth: false,
+                name: '报名'
             },
         },
         {
@@ -35,7 +36,8 @@ let router = new Router({
             name: 'Detail',
             component: Detail,
             meta: {
-                requireAuth: false
+                requireAuth: false,
+                name: '套餐详情'
             },
         },
         {
@@ -43,7 +45,8 @@ let router = new Router({
             name: 'Confirm',
             component: Confirm,
             meta: {
-                requireAuth: false
+                requireAuth: false,
+                name: '支付'
             },
         },
         {
@@ -51,7 +54,8 @@ let router = new Router({
             name: 'Coming',
             component: Coming,
             meta: {
-                requireAuth: false
+                requireAuth: false,
+                name: '建设中'
             },
         },
         {
@@ -59,7 +63,8 @@ let router = new Router({
             name: 'NotFound',
             component: _404,
             meta: {
-                requireAuth: false
+                requireAuth: false,
+                name: '页面走失'
             }
         }
     ]
@@ -69,8 +74,8 @@ router.beforeEach((to, from, next) => {
     let state = store.state
 
     // 设置默认的浏览器标签标题
-    if (to.name) {
-        document.title = to.name + ' - WeChat'
+    if (to.meta.name) {
+        document.title = to.meta.name
     }
     else {
         document.title = 'WeChat'

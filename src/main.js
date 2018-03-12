@@ -5,6 +5,10 @@ import router from './router'
 import store from './store/'
 import App from './App'
 import FastClick from 'fastclick'
+import { WechatPlugin } from 'vux'
+
+Vue.use(WechatPlugin)
+console.log(Vue.wechat)
 
 FastClick.attach(document.body)
 
